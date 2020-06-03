@@ -1,0 +1,9 @@
+body{margin:0px; padding:0px; background-repeat: no-repeat ; background-size:100% 100%; background-attachment: fixed; overflow: hiden;opacity: 25; background-color:skyblue !important;}
+label{color: black; margin:0px 0px; text-align: center;}
+.title{font-style: oblique; font-size: 25px; color: white; text-align: center;  }
+div{color: white;}
+.ra{margin-left: 10px !important; }
+.tel-label{font-size:10px;padding-left:20px; margin-top: 3px;}
+.container{margin-top: 16px !important;}
+.btn-secondary{float: right; color: white !important;}
+p{color: black !important; }

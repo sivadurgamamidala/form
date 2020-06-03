@@ -1,0 +1,4 @@
+body{margin:0px; padding:0px; background-image: url("images/10.jpg"); background-repeat: no-repeat ; background-size:100% 100%; background-attachment: fixed; overflow: hidden;}
+div1{font-size: 120px; padding: 45.5%; font-style: italic; color:#73250f; }
+.ss{text-align:center;}
+.or{margin: 5px; text-align: center; transform: translate(0%, -6%); color: #8e5c5c;}

@@ -1,0 +1,9 @@
+body{margin:0px; padding:0px; background-image: url("images/10.jpg"); background-repeat: no-repeat ; background-size:100% 100%; background-attachment: fixed; overflow: hidden;  }
+.as{margin-top: 4px;}
+.login{position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: white; }
+.login h1{float: left; font-size: 40px; border-bottom: 3px solid #7fa804; margin-bottom: 30px; 
+padding: 3px 0px;}
+.aa{width: 100%; overflow: hidden; font-size: 20px; padding: 10px; margin:2px 0px; border-bottom: 1px solid;}
+.aa i{width: 26px; float: left; text-align: center;}
+.aa input{border: none; outline: none; background: none; color:black; font-size: 18px;  float: left;margin:-3px 10px;}
+.btn{width: 100%; background: none; border: 2px solid white !important; color: white !important; padding:5px !important; font-size: 18px !important; cursor: pointer !important; margin: 10px 0px;}

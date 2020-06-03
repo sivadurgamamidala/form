@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <link rel="stylesheet" href="task4.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script>
+            var stateObject = {
+            "India": { "AndhraPradensh": ["Guntur", "ananthapur","kurnool","krishna","kadapa"],
+            "Kerala": ["Thiruvananthapuram", "Palakkad"],
+            "Goa": ["North Goa", "South Goa"],
+            },
+            "The United States of America": {
+            "califonia": ["California’s 34th congressional district", "California’s 38th congressional district"],
+            "Florida": ["Florida"]
+            }, "Canada": {
+            "Alberta": ["Acadia", "Bighorn"],
+            "Columbia": ["Washington DC"]
+            },
+            }
+            window.onload = function () {
+            var countySel = document.getElementById("countySel"),
+            stateSel = document.getElementById("stateSel"),
+            districtSel = document.getElementById("districtSel");
+            for (var country in stateObject) {
+            countySel.options[countySel.options.length] = new Option(country, country);
+            }
+            countySel.onchange = function () {
+            stateSel.length = 1; // remove all options bar first
+            districtSel.length = 1; // remove all options bar first
+            if (this.selectedIndex < 1) return; // done 
+            for (var state in stateObject[this.value]) {
+            stateSel.options[stateSel.options.length] = new Option(state, state);
+            }
+            }
+            countySel.onchange(); // reset in case page is reloaded
+            stateSel.onchange = function () {
+            districtSel.length = 1; // remove all options bar first
+            if (this.selectedIndex < 1) return; // done 
+            var district = stateObject[countySel.value][this.value];
+            for (var i = 0; i < district.length; i++) {
+            districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+            }
+            }
+            }
+        </script>  
+          
+        <script>
+            function setage(){
+            var d = document.getElementById("dob").value;
+            
+            var dd = new Date(d);
+            var ff = new Date();
+            
+            console.log(dd);
+            document.getElementById("demo").value =ff.getFullYear()- dd.getFullYear();
+            }
+            </script> 
+         <script>
+                function readURL(input) {
+               if (input.files && input.files[0]) {
+                   var reader = new FileReader();
+            
+                   reader.onload = function (e) {
+                       $('#blah')
+                           .attr('src', e.target.result);
+                   };
+            
+                   reader.readAsDataURL(input.files[0]);
+               }
+            }
+            </script> 
+            <script>
+                function myFunction() {
+                  var x = document.getElementById("radio").required;
+                }
+            </script> 
+            <script LANGUAGE="JavaScript" type="text/javascript">
+               /* function display(){
+                var e = document.getElementById("name").value;
+                var f = document.getElementById("dob").value;
+                var g = document.getElementById("demo").value;
+                var h = document.getElementById("radio").value;
+                var i = document.getElementById("mail").value;
+                var j = document.getElementById("countySel").value;
+                var k = document.getElementById("stateSel").value;
+                var l = document.getElementById("districtSel").value;
+                console.log(e);
+                
+                if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('hai', e.value)
+                localStorage.getItem('hai')=document.getElementById("name1").innerHTML;
+                }
+             else {
+  document.getElementById("name1").innerHTML = "Sorry, your browser does not support Web Storage...";
+}}
+
+function readURL(input) {
+               if (input.files && input.files[0]) {
+                   var reader = new FileReader();
+            
+                   reader.onload = function (e) {
+                       $('#blah')
+                           .attr('src', e.target.result);
+                   };
+            
+                   reader.readAsDataURL(input.files[0]);
+               }
+            }
+*/
+                
+                </script>  
+            <script LANGUAGE="JavaScript" type="text/javascript">
+                function display()
+                {   
+                    var c = document.getElementById("image123").value;//.value;
+                    
+                    var e = document.getElementById("name").value;
+                    var f = document.getElementById("dob").value;
+                    var g = document.getElementById("demo").value;
+                    var h;
+                    if (document.getElementById('f1').checked) 
+                    {
+                        h = document.getElementById('f1').value;
+                    }
+                    else
+                    {
+                        h = document.getElementById('f2').value;
+                    }
+                    var i = document.getElementById("mail").value;
+                    var p = document.getElementById("phn").value;
+                   // var j = document.getElementById("countySel").options.length;
+                    // var k = j.options[j.selectedIndex].value;
+                    let selectedCountryIndex=document.getElementById("countySel").selectedIndex;
+                    let selectedStateIndex=document.getElementById("stateSel").selectedIndex;
+                    let selectedDistrictIndex=document.getElementById("districtSel").selectedIndex;
+                    let opt1 = document.getElementById("countySel").options[selectedCountryIndex].value;
+                    let opt2 = document.getElementById("stateSel").options[selectedStateIndex].value;
+                    let opt3 = document.getElementById("districtSel").options[selectedDistrictIndex].value;
+
+                    var siva=document.getElementById("sai");
+                    var displaysetting=siva.style.display;
+                   // var durga=document.getElementById("inputfields");
+                    // durga.style.display=none;
+                    if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem('image1', c)
+                    localStorage.setItem('fullname', e)
+                    localStorage.setItem('date', f)
+                    localStorage.setItem('age', g)
+                    localStorage.setItem('gen', h)
+                    localStorage.setItem('mail1',i)
+                    localStorage.setItem('phoneno',p)
+                    localStorage.setItem('country',opt1)
+                    localStorage.setItem('state',opt2)
+                    localStorage.setItem('district',opt3)
+                        if(displaysetting == "block")
+                        {   
+
+                            siva.style.display='none';
+                            inputfields.style.display='block';
+                            document.getElementById("img").innerHTML=localStorage.getItem('image1');
+                            document.getElementById("name1").innerHTML=localStorage.getItem('fullname');
+                            document.getElementById("dob1").innerHTML=localStorage.getItem('date');
+                            document.getElementById("age1").innerHTML=localStorage.getItem('age');
+                            document.getElementById("gender1").innerHTML=localStorage.getItem('gen');
+                            document.getElementById("email").innerHTML=localStorage.getItem('mail1');
+                            document.getElementById("phone").innerHTML=localStorage.getItem('phoneno');
+                            document.getElementById("country1").innerHTML=localStorage.getItem('country');
+                            document.getElementById("state1").innerHTML=localStorage.getItem('state');
+                            document.getElementById("district1").innerHTML=localStorage.getItem('district');
+                        
+                        }
+                         else
+                        {
+                            siva.style.display='block';
+                        }
+
+                    }
+                    else 
+                    {
+                        document.getElementById("name1").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    }
+                    }
+                   
+            </script>
+          
+    </head>
+    <body>
+        <form class="container" id="sai" action="#" style="display: block;">
+            <div class="title">REGISTRATION FORM</div>
+            <div class="form-group">
+              <label>FULL NAME:</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>DATE OF BIRTH:</label>
+                    <input type="date" name="birthDate"  class="form-control" id="dob" onchange="setage()" required>
+                </div>
+                <div class="form-group col-6">
+                    <label>AGE:</label>
+                    <input type="number" class="form-control" id="demo" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>GENDER:</label>
+                <input class="ra" type="radio" id="f1" value="MALE" name="gender" required>MALE
+                <input class="ra" type="radio"  id="f2" value="FEMALE" name="gender" required >FEMALE
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
+                <label>EMAIL:</label>
+                <input type="email" class="form-control" id="mail" required>
+            </div>
+            <div class="form-group col-6">
+                <label>CONTACT NUMBER:</label>
+                 
+                    <input type="tel"  name="telphone" placeholder="##########" id="phn" class="form-control" pattern="[0-9]{10}" maxlength="10" autocomplete="off" required/>    
+                    <label class="tel-label"> Eg : 8288959015  </label> 
+            </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label>Select Country:</label>
+                    <select name="state" id="countySel"  class="form-control" size="1" required>
+                        <option value="" selected="selected" >Select Country</option>
+                    </select>
+                </div>
+                <div class="form-group col-4">
+                    <label>Select State:</label>
+                    <select name="country" id="stateSel"  class="form-control" size="1" required>
+                        <option value="" selected="selected">Please select Country first</option>
+                    </select>
+                </div>
+                <div class="form-group col-4">
+                    <label>Select District:</label>
+                    <select name="district" id="districtSel"  class="form-control" size="1" required>
+                        <option value="" selected="selected">Please select State first</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type='file' onchange="readURL(this);"  id="image123" accept="image/x-png,image/gif,image/jpeg" required>
+                <img id="blah"  src="http://placehold.it/100" name="sai" alt="your image" style="width: 100px; height: 100px;">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-secondary" type="submit" value="submit" onclick="display();  return false;" style="width: 100px;">SUBMIT</button>
+            </div>
+          </form><BR>
+
+            <!--load input data-->
+
+        <div class="container" id="inputfields" style="margin-top: 15px; display: none;">
+            <div class="row">
+                <div class="col-6">
+                    <div id="img" style="width: 350px; height: 350px;">
+
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <div> NAME: <p id="name1"></p></div>
+                    <div> DATE OF BIRTH: <p id="dob1"></p></div>
+                    <div> AGE: <p id="age1"></p></div>
+                    <div> GENDER: <p id="gender1"></p></div>
+                    <div> EMAIL: <p id="email"></p></div>
+                    <div> PHONE NUMBER: <p id="phone"></p></div>
+                    <div> COUNTRY: <p id="country1"></p></div>
+                    <div> STATE: <p id="state1"></p></div>
+                    <div> DISTRICT: <p id="district1"></p></div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+
+                </div>
+                <div class="col-8">
+                    <button class="btn btn-secondary form-control" style="text-align: center; margin-top: 100px;"><a href="task4.html"  style="text-decoration: none; color: white;">CLICK HERE TO RESET FORM</a></button>
+                </div>
+                <div class="col-2  ">
+    
+                </div> 
+            </div>
+            
+        </div>
+          
+    </body>
+</html>
